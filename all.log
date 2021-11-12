@@ -1,0 +1,38 @@
+2021-11-12 23:43:16.338 [main] INFO  example.kpi.parallel.Executor - Preparing executor service...
+2021-11-12 23:43:16.353 [pool-2-thread-3] INFO  example.kpi.parallel.RepoProcessingCallable - Start cloning repo https://github.com/eomjinyoung/JavaWebProgramming.git. Thread id: 18
+2021-11-12 23:43:16.353 [pool-2-thread-1] INFO  example.kpi.parallel.RepoProcessingCallable - Start cloning repo https://github.com/asemchenko/Hotello-Spring.git. Thread id: 16
+2021-11-12 23:43:16.353 [pool-2-thread-4] INFO  example.kpi.parallel.RepoProcessingCallable - Start cloning repo https://github.com/Tastenkunst/brfv4_javascript_examples.git. Thread id: 19
+2021-11-12 23:43:16.353 [pool-2-thread-2] INFO  example.kpi.parallel.RepoProcessingCallable - Start cloning repo https://github.com/maxliaops/Java_Web_Examples.git. Thread id: 17
+2021-11-12 23:43:16.359 [pool-2-thread-2] INFO  example.kpi.parallel.RepoProcessingCallable - Created directory for repo: C:\Users\asem\Downloads\temp\3541554837914210370. Thread id: 17
+2021-11-12 23:43:16.362 [pool-2-thread-4] INFO  example.kpi.parallel.RepoProcessingCallable - Created directory for repo: C:\Users\asem\Downloads\temp\7427289178413579697. Thread id: 19
+2021-11-12 23:43:16.363 [pool-2-thread-3] INFO  example.kpi.parallel.RepoProcessingCallable - Created directory for repo: C:\Users\asem\Downloads\temp\6703603969348930453. Thread id: 18
+2021-11-12 23:43:16.371 [pool-2-thread-1] INFO  example.kpi.parallel.RepoProcessingCallable - Created directory for repo: C:\Users\asem\Downloads\temp\5764367087863898036. Thread id: 16
+2021-11-12 23:43:20.153 [pool-2-thread-1] INFO  example.kpi.parallel.RepoProcessingCallable - Cloned repo https://github.com/asemchenko/Hotello-Spring.git. Thread id: 16
+2021-11-12 23:43:20.154 [pool-2-thread-1] INFO  example.kpi.parallel.RepoProcessingCallable - Start cloning repo https://github.com/cschneider4711/Marathon.git. Thread id: 16
+2021-11-12 23:43:20.156 [pool-2-thread-1] INFO  example.kpi.parallel.RepoProcessingCallable - Created directory for repo: C:\Users\asem\Downloads\temp\1899983893928605932. Thread id: 16
+2021-11-12 23:43:27.692 [pool-2-thread-1] INFO  example.kpi.parallel.RepoProcessingCallable - Cloned repo https://github.com/cschneider4711/Marathon.git. Thread id: 16
+2021-11-12 23:43:27.693 [pool-2-thread-1] INFO  example.kpi.parallel.RepoProcessingCallable - Start cloning repo https://github.com/mikemelon/java-signin.git. Thread id: 16
+2021-11-12 23:43:27.694 [pool-2-thread-1] INFO  example.kpi.parallel.RepoProcessingCallable - Created directory for repo: C:\Users\asem\Downloads\temp\5430319622821659586. Thread id: 16
+2021-11-12 23:43:29.457 [pool-2-thread-4] INFO  example.kpi.parallel.RepoProcessingCallable - Cloned repo https://github.com/Tastenkunst/brfv4_javascript_examples.git. Thread id: 19
+2021-11-12 23:43:29.458 [pool-2-thread-4] INFO  example.kpi.parallel.RepoProcessingCallable - Start cloning repo https://github.com/sonngotung/JWebMVC.git. Thread id: 19
+2021-11-12 23:43:29.459 [pool-2-thread-4] INFO  example.kpi.parallel.RepoProcessingCallable - Created directory for repo: C:\Users\asem\Downloads\temp\8155230360514574836. Thread id: 19
+2021-11-12 23:43:31.564 [pool-2-thread-1] INFO  example.kpi.parallel.RepoProcessingCallable - Cloned repo https://github.com/mikemelon/java-signin.git. Thread id: 16
+2021-11-12 23:43:31.565 [pool-2-thread-1] INFO  example.kpi.parallel.RepoProcessingCallable - Start cloning repo https://github.com/tsultana2/EducationalWebSite.git. Thread id: 16
+2021-11-12 23:43:31.571 [pool-2-thread-1] INFO  example.kpi.parallel.RepoProcessingCallable - Created directory for repo: C:\Users\asem\Downloads\temp\4188071065615451927. Thread id: 16
+2021-11-12 23:43:31.629 [pool-2-thread-4] INFO  example.kpi.parallel.RepoProcessingCallable - Cloned repo https://github.com/sonngotung/JWebMVC.git. Thread id: 19
+2021-11-12 23:43:31.629 [pool-2-thread-4] INFO  example.kpi.parallel.RepoProcessingCallable - Start cloning repo https://github.com/mikemelon/JavaWebEducation.git. Thread id: 19
+2021-11-12 23:43:31.631 [pool-2-thread-4] INFO  example.kpi.parallel.RepoProcessingCallable - Created directory for repo: C:\Users\asem\Downloads\temp\4364148316462618574. Thread id: 19
+2021-11-12 23:43:32.511 [pool-2-thread-4] INFO  example.kpi.parallel.RepoProcessingCallable - Cloned repo https://github.com/mikemelon/JavaWebEducation.git. Thread id: 19
+2021-11-12 23:43:32.512 [pool-2-thread-4] INFO  example.kpi.parallel.RepoProcessingCallable - Start cloning repo https://github.com/Ocryst/Web3JavascriptEducation.git. Thread id: 19
+2021-11-12 23:43:32.517 [pool-2-thread-4] INFO  example.kpi.parallel.RepoProcessingCallable - Created directory for repo: C:\Users\asem\Downloads\temp\730003764995968612. Thread id: 19
+2021-11-12 23:43:33.694 [pool-2-thread-4] INFO  example.kpi.parallel.RepoProcessingCallable - Cloned repo https://github.com/Ocryst/Web3JavascriptEducation.git. Thread id: 19
+2021-11-12 23:43:33.695 [pool-2-thread-4] INFO  example.kpi.parallel.RepoProcessingCallable - Start cloning repo https://github.com/mihail-petrov/netit-webdev-java.git. Thread id: 19
+2021-11-12 23:43:33.696 [pool-2-thread-4] INFO  example.kpi.parallel.RepoProcessingCallable - Created directory for repo: C:\Users\asem\Downloads\temp\4256975960707742472. Thread id: 19
+2021-11-12 23:43:35.382 [pool-2-thread-1] INFO  example.kpi.parallel.RepoProcessingCallable - Cloned repo https://github.com/tsultana2/EducationalWebSite.git. Thread id: 16
+2021-11-12 23:43:35.384 [pool-2-thread-1] INFO  example.kpi.parallel.RepoProcessingCallable - Start cloning repo https://github.com/infinity23/family-education-platform.git. Thread id: 16
+2021-11-12 23:43:35.385 [pool-2-thread-1] INFO  example.kpi.parallel.RepoProcessingCallable - Created directory for repo: C:\Users\asem\Downloads\temp\6719438683036916363. Thread id: 16
+2021-11-12 23:43:38.218 [pool-2-thread-3] INFO  example.kpi.parallel.RepoProcessingCallable - Cloned repo https://github.com/eomjinyoung/JavaWebProgramming.git. Thread id: 18
+2021-11-12 23:43:39.262 [pool-2-thread-1] INFO  example.kpi.parallel.RepoProcessingCallable - Cloned repo https://github.com/infinity23/family-education-platform.git. Thread id: 16
+2021-11-12 23:43:58.407 [pool-2-thread-4] INFO  example.kpi.parallel.RepoProcessingCallable - Cloned repo https://github.com/mihail-petrov/netit-webdev-java.git. Thread id: 19
+2021-11-12 23:44:04.343 [pool-2-thread-2] INFO  example.kpi.parallel.RepoProcessingCallable - Cloned repo https://github.com/maxliaops/Java_Web_Examples.git. Thread id: 17
+2021-11-12 23:44:04.344 [main] INFO  example.kpi.parallel.Executor - Closing resources...

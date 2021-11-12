@@ -1,18 +1,22 @@
 package example.kpi;
 
+import example.kpi.parallel.Executor;
+
 /**
  * Hello world!
- *
  */
 public class App {
-    public static void main( String[] args )
-    {
+    public static void main(String[] args) {
         final var configurationProvider = new ConfigurationProvider(args);
         configurationProvider.parseConfiguration();
 
         final var executor = new Executor(
                 configurationProvider.getConfiguration()
         );
-        executor.execute();
+        try {
+            executor.execute();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }
