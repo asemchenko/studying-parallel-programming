@@ -4,10 +4,15 @@ package example.kpi;
  * Hello world!
  *
  */
-public class App 
-{
+public class App {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+        final var configurationProvider = new ConfigurationProvider(args);
+        configurationProvider.parseConfiguration();
+
+        final var executor = new Executor(
+                configurationProvider.getConfiguration()
+        );
+        executor.execute();
     }
 }
