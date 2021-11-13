@@ -1,31 +1,25 @@
-package example.kpi.parallel;
+package example.kpi.repo;
 
 import example.kpi.model.result.AppConfiguration;
-import example.kpi.model.result.RepoAnalysisResult;
-import lombok.AccessLevel;
+import example.kpi.model.result.RepoContent;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.eclipse.jgit.api.Git;
+import org.eclipse.jgit.api.errors.GitAPIException;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Random;
-import java.util.concurrent.Callable;
 
 @Log4j2
-@RequiredArgsConstructor(access = AccessLevel.PRIVATE)
-public class RepoProcessingCallable implements Callable<RepoAnalysisResult> {
+@RequiredArgsConstructor
+public class RepoDownloader {
     private final String repoUrl;
     private final AppConfiguration configuration;
 
-    public static RepoProcessingCallable create(String url, AppConfiguration configuration) {
-        return new RepoProcessingCallable(url, configuration);
-    }
-
-    @Override
-    public RepoAnalysisResult call() throws Exception {
-        log.info(
+    public RepoContent download() throws GitAPIException, IOException {
+        log.debug(
                 () -> String.format(
                         "Start cloning repo %s. Thread id: %d",
                         this.repoUrl,
@@ -40,14 +34,15 @@ public class RepoProcessingCallable implements Callable<RepoAnalysisResult> {
                 .setDirectory(directoryForRepoFiles.toFile())
                 .call();
 
-        log.info(
+        log.debug(
                 () -> String.format(
                         "Cloned repo %s. Thread id: %d",
                         this.repoUrl,
                         Thread.currentThread().getId()
                 )
         );
-        return null;
+
+        return new RepoContent(directoryForRepoFiles);
     }
 
     private Path createRandomDirectoryForRepoFiles() throws IOException {
@@ -55,7 +50,7 @@ public class RepoProcessingCallable implements Callable<RepoAnalysisResult> {
                 .getRepoContentStoringDir()
                 .resolve(Long.toString(Math.abs(new Random().nextLong())));
         Files.createDirectory(directoryForRepoFiles);
-        log.info(() -> String.format("Created directory for repo: %s. Thread id: %s", directoryForRepoFiles, Thread.currentThread().getId()));
+        log.debug(() -> String.format("Created directory for repo: %s. Thread id: %s", directoryForRepoFiles, Thread.currentThread().getId()));
         return directoryForRepoFiles;
     }
 }

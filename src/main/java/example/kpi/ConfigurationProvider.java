@@ -1,12 +1,16 @@
 package example.kpi;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import example.kpi.model.result.AppConfiguration;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.log4j.Log4j2;
 
 import java.nio.file.Path;
 import java.util.List;
 
 @RequiredArgsConstructor
+@Log4j2
 public class ConfigurationProvider {
     private final String[] cliArgs;
 
@@ -36,12 +40,18 @@ public class ConfigurationProvider {
                 60 * 60 * 60,
                 Path.of("C:\\Users\\asem\\Downloads\\temp")
         );
-        // TODO anse0220 implement me
+        log.info("Got app configuration: ");
+        log.info(() -> {
+            try {
+                return new ObjectMapper().writeValueAsString(this.configuration);
+            } catch (JsonProcessingException e) {
+                e.printStackTrace();
+                return "";
+            }
+        });
     }
 
     public AppConfiguration getConfiguration() {
         return this.configuration;
     }
-
-
 }

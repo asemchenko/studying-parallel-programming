@@ -2,9 +2,6 @@ package example.kpi;
 
 import example.kpi.parallel.Executor;
 
-/**
- * Hello world!
- */
 public class App {
     public static void main(String[] args) {
         final var configurationProvider = new ConfigurationProvider(args);

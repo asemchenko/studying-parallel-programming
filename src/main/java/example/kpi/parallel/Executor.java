@@ -49,7 +49,7 @@ public class Executor {
     }
 
     private void prepare() {
-        log.info("Preparing executor service...");
+        log.debug("Preparing executor service...");
 
         if (this.configuration.getThreadsAmount() == 1) {
             executorService = Executors.newSingleThreadExecutor();
@@ -59,7 +59,7 @@ public class Executor {
     }
 
     private void close() {
-        log.info("Closing resources...");
+        log.debug("Closing resources...");
         this.executorService.shutdown();
     }
 
@@ -67,7 +67,7 @@ public class Executor {
         return this.configuration
                 .getRepoURLs()
                 .stream()
-                .map(url -> RepoProcessingCallable.create(url, this.configuration))
+                .map(url -> RepoAnalysisCallable.create(url, this.configuration))
                 .collect(Collectors.toList());
     }
 }
