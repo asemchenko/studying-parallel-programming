@@ -1,8 +1,8 @@
 package example.kpi.pattern;
 
 import example.kpi.model.result.*;
-import example.kpi.pattern.checkers.IssueChecker;
-import example.kpi.pattern.checkers.generic.RegexChecker;
+import example.kpi.pattern.checkers.line.LineChecker;
+import example.kpi.pattern.checkers.line.generic.RegexLineChecker;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.apache.commons.io.FileUtils;
@@ -21,8 +21,8 @@ import java.util.stream.Stream;
 @Log4j2
 @RequiredArgsConstructor
 public class RepoAnalyzer {
-    private static final List<IssueChecker> checkers = List.of(
-            new RegexChecker(
+    private static final List<LineChecker> checkers = List.of(
+            new RegexLineChecker(
                     new Issue(
                             "test_issue",
                             "java main method signature"

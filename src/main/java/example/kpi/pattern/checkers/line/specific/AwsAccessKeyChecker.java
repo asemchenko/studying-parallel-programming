@@ -1,25 +1,25 @@
-package example.kpi.pattern.checkers.specific;
+package example.kpi.pattern.checkers.line.specific;
 
 import example.kpi.model.result.Issue;
-import example.kpi.pattern.checkers.IssueChecker;
-import example.kpi.pattern.checkers.generic.RegexChecker;
+import example.kpi.pattern.checkers.line.LineChecker;
+import example.kpi.pattern.checkers.line.generic.RegexLineChecker;
 import org.jetbrains.annotations.Nullable;
 
 /**
  * <a href="https://gist.github.com/hsuh/88360eeadb0e8f7136c37fd46a62ee10">more here</a>
  */
-public class AwsAccessKeyChecker implements IssueChecker {
+public class AwsAccessKeyChecker implements LineChecker {
     private static final Issue ISSUE = Issue.builder()
             .issueType("access_key_expose")
             .issueDescription("Potential amazon access credential expose")
             .build();
 
-    private static final IssueChecker REGEX_CHECKER_ACCESS_KEY_ID = new RegexChecker(
+    private static final LineChecker REGEX_CHECKER_ACCESS_KEY_ID = new RegexLineChecker(
             ISSUE,
             ".*(?<![A-Z0-9])[A-Z0-9]{20}(?![A-Z0-9]).*"
     );
 
-    private static final IssueChecker REGEX_CHECKER_ACCESS_KEY = new RegexChecker(
+    private static final LineChecker REGEX_CHECKER_ACCESS_KEY = new RegexLineChecker(
             ISSUE,
             ".*(?<![A-Za-z0-9/+=])[A-Za-z0-9/+=]{40}(?![A-Za-z0-9/+=]).*"
     );
