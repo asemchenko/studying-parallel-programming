@@ -43,10 +43,8 @@ public class ConfigurationProvider {
                 60 * 60 * 60,
                 Path.of("C:\\Users\\asem\\Downloads\\temp"),
                 List.of(
-                        "java",
-                        "xml",
-                        "json",
-                        "yaml"
+                        "bin",
+                        "zip"
                 ),
                 Paths.get(Objects.requireNonNull(ClassLoader.getSystemResource("pathCheckers.json")).toURI())
         );

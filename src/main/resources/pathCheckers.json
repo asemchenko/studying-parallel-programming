@@ -717,6 +717,6 @@
       "issueDescription": "Potentially can contain secret data"
     },
     "type": "EXTENSION",
-    "pattern": ".*resources.*"
+    "pattern": ".*properties.*"
   }
 ]

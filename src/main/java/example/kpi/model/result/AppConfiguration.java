@@ -19,7 +19,7 @@ public class AppConfiguration {
      * Which files in repository should be analyzed. E.g. '.java', or '.ts'
      * Just to avoid analyzing some unnecessary files, like compiled binaries
      */
-    private final List<String> fileExtensionsToBeAnalyzed;
+    private final List<String> fileExtensionsToBeSkipped;
     /**
      * Path to JSON file that contains path file checkers
      */

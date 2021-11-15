@@ -1,24 +1,20 @@
 package example.kpi.pattern;
 
 import example.kpi.di.Provider;
-import example.kpi.model.result.*;
-import example.kpi.pattern.checkers.line.LineChecker;
-import example.kpi.pattern.checkers.line.generic.RegexLineChecker;
+import example.kpi.model.result.AppConfiguration;
+import example.kpi.model.result.RepoAnalysisResult;
+import example.kpi.model.result.RepoContent;
+import example.kpi.model.result.RepoIssue;
 import example.kpi.pattern.file.FileAnalyzer;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.FilenameUtils;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-import java.util.Objects;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 @Log4j2
 @RequiredArgsConstructor
@@ -29,10 +25,14 @@ public class RepoAnalyzer {
 
     public RepoAnalysisResult analyze() {
         Collection<File> repoFilesToBeAnalyzed = FileUtils.listFiles(
-                repoContent.getRepoDirectory().toFile(),
-                this.configuration.getFileExtensionsToBeAnalyzed().toArray(new String[0]),
-                true
-        );
+                        repoContent.getRepoDirectory().toFile(),
+                        null,
+                        true
+                ).stream()
+                .filter(f -> !this.configuration.getFileExtensionsToBeSkipped().contains(
+                        FilenameUtils.getExtension(f.getName())
+                ))
+                .collect(Collectors.toList());
 
         log.debug(() -> String.format(
                 "Start analyzing repo %s. Got files to be checked: %s",
