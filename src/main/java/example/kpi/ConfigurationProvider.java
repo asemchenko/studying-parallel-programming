@@ -26,18 +26,18 @@ public class ConfigurationProvider {
     public AppConfiguration parseConfiguration() throws URISyntaxException {
         this.configuration = new AppConfiguration(
                 List.of(
-                        "https://github.com/asemchenko/Hotello-Spring.git"
-//                        "https://github.com/maxliaops/Java_Web_Examples.git",
-//                        "https://github.com/eomjinyoung/JavaWebProgramming.git",
-//                        "https://github.com/Tastenkunst/brfv4_javascript_examples.git",
-//                        "https://github.com/cschneider4711/Marathon.git",
-//                        "https://github.com/mikemelon/java-signin.git",
-//                        "https://github.com/sonngotung/JWebMVC.git",
-//                        "https://github.com/tsultana2/EducationalWebSite.git",
-//                        "https://github.com/mikemelon/JavaWebEducation.git",
-//                        "https://github.com/Ocryst/Web3JavascriptEducation.git",
-//                        "https://github.com/mihail-petrov/netit-webdev-java.git",
-//                        "https://github.com/infinity23/family-education-platform.git"
+                        "https://github.com/asemchenko/Hotello-Spring.git",
+                        "https://github.com/maxliaops/Java_Web_Examples.git",
+                        "https://github.com/eomjinyoung/JavaWebProgramming.git",
+                        "https://github.com/Tastenkunst/brfv4_javascript_examples.git",
+                        "https://github.com/cschneider4711/Marathon.git",
+                        "https://github.com/mikemelon/java-signin.git",
+                        "https://github.com/sonngotung/JWebMVC.git",
+                        "https://github.com/tsultana2/EducationalWebSite.git",
+                        "https://github.com/mikemelon/JavaWebEducation.git",
+                        "https://github.com/Ocryst/Web3JavascriptEducation.git",
+                        "https://github.com/mihail-petrov/netit-webdev-java.git",
+                        "https://github.com/infinity23/family-education-platform.git"
                 ),
                 4,
                 60 * 60 * 60,
