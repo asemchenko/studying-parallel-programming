@@ -4,7 +4,7 @@
       "issueType": "Private SSH key",
       "issueDescription": null
     },
-    "type": "filename",
+    "type": "FILENAME",
     "pattern": ".*\\A.*_rsa\\z.*"
   },
   {
@@ -12,7 +12,7 @@
       "issueType": "Private SSH key",
       "issueDescription": null
     },
-    "type": "filename",
+    "type": "FILENAME",
     "pattern": ".*\\A.*_dsa\\z.*"
   },
   {
@@ -20,7 +20,7 @@
       "issueType": "Private SSH key",
       "issueDescription": null
     },
-    "type": "filename",
+    "type": "FILENAME",
     "pattern": ".*\\A.*_ed25519\\z.*"
   },
   {
@@ -28,7 +28,7 @@
       "issueType": "Private SSH key",
       "issueDescription": null
     },
-    "type": "filename",
+    "type": "FILENAME",
     "pattern": ".*\\A.*_ecdsa\\z.*"
   },
   {
@@ -36,7 +36,7 @@
       "issueType": "SSH configuration file",
       "issueDescription": null
     },
-    "type": "path",
+    "type": "PATH",
     "pattern": ".*\\.?ssh/config\\z.*"
   },
   {
@@ -44,7 +44,7 @@
       "issueType": "Potential cryptographic private key",
       "issueDescription": null
     },
-    "type": "extension",
+    "type": "EXTENSION",
     "pattern": ".*pem.*"
   },
   {
@@ -52,7 +52,7 @@
       "issueType": "Potential cryptographic private key",
       "issueDescription": null
     },
-    "type": "extension",
+    "type": "EXTENSION",
     "pattern": ".*\\Akey(pair)?\\z.*"
   },
   {
@@ -60,7 +60,7 @@
       "issueType": "Potential cryptographic key bundle",
       "issueDescription": null
     },
-    "type": "extension",
+    "type": "EXTENSION",
     "pattern": ".*pkcs12.*"
   },
   {
@@ -68,7 +68,7 @@
       "issueType": "Potential cryptographic key bundle",
       "issueDescription": null
     },
-    "type": "extension",
+    "type": "EXTENSION",
     "pattern": ".*pfx.*"
   },
   {
@@ -76,7 +76,7 @@
       "issueType": "Potential cryptographic key bundle",
       "issueDescription": null
     },
-    "type": "extension",
+    "type": "EXTENSION",
     "pattern": ".*p12.*"
   },
   {
@@ -84,7 +84,7 @@
       "issueType": "Potential cryptographic key bundle",
       "issueDescription": null
     },
-    "type": "extension",
+    "type": "EXTENSION",
     "pattern": ".*asc.*"
   },
   {
@@ -92,7 +92,7 @@
       "issueType": "Pidgin OTR private key",
       "issueDescription": null
     },
-    "type": "filename",
+    "type": "FILENAME",
     "pattern": ".*otr.private_key.*"
   },
   {
@@ -100,7 +100,7 @@
       "issueType": "Shell command history file",
       "issueDescription": null
     },
-    "type": "filename",
+    "type": "FILENAME",
     "pattern": ".*\\A\\.?(bash_|zsh_|z)?history\\z.*"
   },
   {
@@ -108,7 +108,7 @@
       "issueType": "MySQL client command history file",
       "issueDescription": null
     },
-    "type": "filename",
+    "type": "FILENAME",
     "pattern": ".*\\A\\.?mysql_history\\z.*"
   },
   {
@@ -116,7 +116,7 @@
       "issueType": "PostgreSQL client command history file",
       "issueDescription": null
     },
-    "type": "filename",
+    "type": "FILENAME",
     "pattern": ".*\\A\\.?psql_history\\z.*"
   },
   {
@@ -124,7 +124,7 @@
       "issueType": "PostgreSQL password file",
       "issueDescription": null
     },
-    "type": "filename",
+    "type": "FILENAME",
     "pattern": ".*\\A\\.?pgpass\\z.*"
   },
   {
@@ -132,7 +132,7 @@
       "issueType": "Ruby IRB console history file",
       "issueDescription": null
     },
-    "type": "filename",
+    "type": "FILENAME",
     "pattern": ".*\\A\\.?irb_history\\z.*"
   },
   {
@@ -140,7 +140,7 @@
       "issueType": "Pidgin chat client account configuration file",
       "issueDescription": null
     },
-    "type": "path",
+    "type": "PATH",
     "pattern": ".*\\.?purple\\/accounts\\.xml\\z.*"
   },
   {
@@ -148,7 +148,7 @@
       "issueType": "Hexchat/XChat IRC client server list configuration file",
       "issueDescription": null
     },
-    "type": "path",
+    "type": "PATH",
     "pattern": ".*\\.?xchat2?\\/servlist_?\\.conf\\z.*"
   },
   {
@@ -156,7 +156,7 @@
       "issueType": "Irssi IRC client configuration file",
       "issueDescription": null
     },
-    "type": "path",
+    "type": "PATH",
     "pattern": ".*\\.?irssi\\/config\\z.*"
   },
   {
@@ -164,7 +164,7 @@
       "issueType": "Recon-ng web reconnaissance framework API key database",
       "issueDescription": null
     },
-    "type": "path",
+    "type": "PATH",
     "pattern": ".*\\.?recon-ng\\/keys\\.db\\z.*"
   },
   {
@@ -172,7 +172,7 @@
       "issueType": "DBeaver SQL database manager configuration file",
       "issueDescription": null
     },
-    "type": "filename",
+    "type": "FILENAME",
     "pattern": ".*\\A\\.?dbeaver-data-sources.xml\\z.*"
   },
   {
@@ -180,7 +180,7 @@
       "issueType": "Mutt e-mail client configuration file",
       "issueDescription": null
     },
-    "type": "filename",
+    "type": "FILENAME",
     "pattern": ".*\\A\\.?muttrc\\z.*"
   },
   {
@@ -188,7 +188,7 @@
       "issueType": "S3cmd configuration file",
       "issueDescription": null
     },
-    "type": "filename",
+    "type": "FILENAME",
     "pattern": ".*\\A\\.?s3cfg\\z.*"
   },
   {
@@ -196,7 +196,7 @@
       "issueType": "AWS CLI credentials file",
       "issueDescription": null
     },
-    "type": "path",
+    "type": "PATH",
     "pattern": ".*\\.?aws/credentials\\z.*"
   },
   {
@@ -204,7 +204,7 @@
       "issueType": "T command-line Twitter client configuration file",
       "issueDescription": null
     },
-    "type": "filename",
+    "type": "FILENAME",
     "pattern": ".*\\A\\.?trc\\z.*"
   },
   {
@@ -212,7 +212,7 @@
       "issueType": "OpenVPN client configuration file",
       "issueDescription": null
     },
-    "type": "extension",
+    "type": "EXTENSION",
     "pattern": ".*ovpn.*"
   },
   {
@@ -220,7 +220,7 @@
       "issueType": "Well, this is awkward... Gitrob configuration file",
       "issueDescription": null
     },
-    "type": "filename",
+    "type": "FILENAME",
     "pattern": ".*\\A\\.?gitrobrc\\z.*"
   },
   {
@@ -228,7 +228,7 @@
       "issueType": "Shell configuration file",
       "issueDescription": "Shell configuration files might contain information such as server hostnames, passwords and API keys."
     },
-    "type": "filename",
+    "type": "FILENAME",
     "pattern": ".*\\A\\.?(bash|zsh)rc\\z.*"
   },
   {
@@ -236,7 +236,7 @@
       "issueType": "Shell profile configuration file",
       "issueDescription": "Shell configuration files might contain information such as server hostnames, passwords and API keys."
     },
-    "type": "filename",
+    "type": "FILENAME",
     "pattern": ".*\\A\\.?(bash_|zsh_)?profile\\z.*"
   },
   {
@@ -244,7 +244,7 @@
       "issueType": "Shell command alias configuration file",
       "issueDescription": "Shell configuration files might contain information such as server hostnames, passwords and API keys."
     },
-    "type": "filename",
+    "type": "FILENAME",
     "pattern": ".*\\A\\.?(bash_|zsh_)?aliases\\z.*"
   },
   {
@@ -252,7 +252,7 @@
       "issueType": "Ruby On Rails secret token configuration file",
       "issueDescription": "If the Rails secret token is known, it can allow for remote code execution. (http://www.exploit-db.com/exploits/27527/)"
     },
-    "type": "filename",
+    "type": "FILENAME",
     "pattern": ".*secret_token.rb.*"
   },
   {
@@ -260,7 +260,7 @@
       "issueType": "OmniAuth configuration file",
       "issueDescription": "The OmniAuth configuration file might contain client application secrets."
     },
-    "type": "filename",
+    "type": "FILENAME",
     "pattern": ".*omniauth.rb.*"
   },
   {
@@ -268,7 +268,7 @@
       "issueType": "Carrierwave configuration file",
       "issueDescription": "Can contain credentials for online storage systems such as Amazon S3 and Google Storage."
     },
-    "type": "filename",
+    "type": "FILENAME",
     "pattern": ".*carrierwave.rb.*"
   },
   {
@@ -276,7 +276,7 @@
       "issueType": "Ruby On Rails database schema file",
       "issueDescription": "Contains information on the database schema of a Ruby On Rails application."
     },
-    "type": "filename",
+    "type": "FILENAME",
     "pattern": ".*schema.rb.*"
   },
   {
@@ -284,7 +284,7 @@
       "issueType": "Potential Ruby On Rails database configuration file",
       "issueDescription": "Might contain database credentials."
     },
-    "type": "filename",
+    "type": "FILENAME",
     "pattern": ".*database.yml.*"
   },
   {
@@ -292,7 +292,7 @@
       "issueType": "Django configuration file",
       "issueDescription": "Might contain database credentials, online storage system credentials, secret keys, etc."
     },
-    "type": "filename",
+    "type": "FILENAME",
     "pattern": ".*settings.py.*"
   },
   {
@@ -300,7 +300,7 @@
       "issueType": "PHP configuration file",
       "issueDescription": "Might contain credentials and keys."
     },
-    "type": "filename",
+    "type": "FILENAME",
     "pattern": ".*\\A(.*)?config(\\.inc)?\\.php\\z.*"
   },
   {
@@ -308,7 +308,7 @@
       "issueType": "KeePass password manager database file",
       "issueDescription": null
     },
-    "type": "extension",
+    "type": "EXTENSION",
     "pattern": ".*kdb.*"
   },
   {
@@ -316,7 +316,7 @@
       "issueType": "1Password password manager database file",
       "issueDescription": null
     },
-    "type": "extension",
+    "type": "EXTENSION",
     "pattern": ".*agilekeychain.*"
   },
   {
@@ -324,7 +324,7 @@
       "issueType": "Apple Keychain database file",
       "issueDescription": null
     },
-    "type": "extension",
+    "type": "EXTENSION",
     "pattern": ".*keychain.*"
   },
   {
@@ -332,7 +332,7 @@
       "issueType": "GNOME Keyring database file",
       "issueDescription": null
     },
-    "type": "extension",
+    "type": "EXTENSION",
     "pattern": ".*\\Akey(store|ring)\\z.*"
   },
   {
@@ -340,7 +340,7 @@
       "issueType": "Log file",
       "issueDescription": "Log files might contain information such as references to secret HTTP endpoints, session IDs, user information, passwords and API keys."
     },
-    "type": "extension",
+    "type": "EXTENSION",
     "pattern": ".*log.*"
   },
   {
@@ -348,7 +348,7 @@
       "issueType": "Network traffic capture file",
       "issueDescription": null
     },
-    "type": "extension",
+    "type": "EXTENSION",
     "pattern": ".*pcap.*"
   },
   {
@@ -356,7 +356,7 @@
       "issueType": "SQL dump file",
       "issueDescription": null
     },
-    "type": "extension",
+    "type": "EXTENSION",
     "pattern": ".*\\Asql(dump)?\\z.*"
   },
   {
@@ -364,7 +364,7 @@
       "issueType": "GnuCash database file",
       "issueDescription": null
     },
-    "type": "extension",
+    "type": "EXTENSION",
     "pattern": ".*gnucash.*"
   },
   {
@@ -372,7 +372,7 @@
       "issueType": "Contains word: backup",
       "issueDescription": null
     },
-    "type": "filename",
+    "type": "FILENAME",
     "pattern": ".*backup.*"
   },
   {
@@ -380,7 +380,7 @@
       "issueType": "Contains word: dump",
       "issueDescription": null
     },
-    "type": "filename",
+    "type": "FILENAME",
     "pattern": ".*dump.*"
   },
   {
@@ -388,7 +388,7 @@
       "issueType": "Contains word: password",
       "issueDescription": null
     },
-    "type": "filename",
+    "type": "FILENAME",
     "pattern": ".*password.*"
   },
   {
@@ -396,7 +396,7 @@
       "issueType": "Contains word: credential",
       "issueDescription": null
     },
-    "type": "filename",
+    "type": "FILENAME",
     "pattern": ".*credential.*"
   },
   {
@@ -404,7 +404,7 @@
       "issueType": "Contains word: secret",
       "issueDescription": null
     },
-    "type": "filename",
+    "type": "FILENAME",
     "pattern": ".*secret.*"
   },
   {
@@ -412,7 +412,7 @@
       "issueType": "Contains words: private, key",
       "issueDescription": null
     },
-    "type": "filename",
+    "type": "FILENAME",
     "pattern": ".*private.*key.*"
   },
   {
@@ -420,7 +420,7 @@
       "issueType": "Jenkins publish over SSH plugin file",
       "issueDescription": null
     },
-    "type": "filename",
+    "type": "FILENAME",
     "pattern": ".*jenkins.plugins.publish_over_ssh.BapSshPublisherPlugin.xml.*"
   },
   {
@@ -428,7 +428,7 @@
       "issueType": "Potential Jenkins credentials file",
       "issueDescription": null
     },
-    "type": "filename",
+    "type": "FILENAME",
     "pattern": ".*credentials.xml.*"
   },
   {
@@ -436,7 +436,7 @@
       "issueType": "Apache htpasswd file",
       "issueDescription": null
     },
-    "type": "filename",
+    "type": "FILENAME",
     "pattern": ".*\\A\\.?htpasswd\\z.*"
   },
   {
@@ -444,7 +444,7 @@
       "issueType": "Configuration file for auto-login process",
       "issueDescription": "Might contain username and password."
     },
-    "type": "filename",
+    "type": "FILENAME",
     "pattern": ".*\\A(\\.|_)?netrc\\z.*"
   },
   {
@@ -452,7 +452,7 @@
       "issueType": "KDE Wallet Manager database file",
       "issueDescription": null
     },
-    "type": "extension",
+    "type": "EXTENSION",
     "pattern": ".*kwallet.*"
   },
   {
@@ -460,7 +460,7 @@
       "issueType": "Potential MediaWiki configuration file",
       "issueDescription": null
     },
-    "type": "filename",
+    "type": "FILENAME",
     "pattern": ".*LocalSettings.php.*"
   },
   {
@@ -468,7 +468,7 @@
       "issueType": "Tunnelblick VPN configuration file",
       "issueDescription": null
     },
-    "type": "extension",
+    "type": "EXTENSION",
     "pattern": ".*tblk.*"
   },
   {
@@ -476,7 +476,7 @@
       "issueType": "Rubygems credentials file",
       "issueDescription": "Might contain API key for a rubygems.org account."
     },
-    "type": "path",
+    "type": "PATH",
     "pattern": ".*\\.?gem/credentials\\z.*"
   },
   {
@@ -484,7 +484,7 @@
       "issueType": "Potential MSBuild publish profile",
       "issueDescription": null
     },
-    "type": "filename",
+    "type": "FILENAME",
     "pattern": ".*\\A*\\.pubxml(\\.user)?\\z.*"
   },
   {
@@ -492,7 +492,7 @@
       "issueType": "Sequel Pro MySQL database manager bookmark file",
       "issueDescription": null
     },
-    "type": "filename",
+    "type": "FILENAME",
     "pattern": ".*Favorites.plist.*"
   },
   {
@@ -500,7 +500,7 @@
       "issueType": "Little Snitch firewall configuration file",
       "issueDescription": "Contains traffic rules for applications"
     },
-    "type": "filename",
+    "type": "FILENAME",
     "pattern": ".*configuration.user.xpl.*"
   },
   {
@@ -508,7 +508,7 @@
       "issueType": "Day One journal file",
       "issueDescription": null
     },
-    "type": "extension",
+    "type": "EXTENSION",
     "pattern": ".*dayone.*"
   },
   {
@@ -516,7 +516,7 @@
       "issueType": "Potential jrnl journal file",
       "issueDescription": null
     },
-    "type": "filename",
+    "type": "FILENAME",
     "pattern": ".*journal.txt.*"
   },
   {
@@ -524,7 +524,7 @@
       "issueType": "Tugboat DigitalOcean management tool configuration",
       "issueDescription": null
     },
-    "type": "filename",
+    "type": "FILENAME",
     "pattern": ".*\\A\\.?tugboat\\z.*"
   },
   {
@@ -532,7 +532,7 @@
       "issueType": "git-credential-store helper credentials file",
       "issueDescription": null
     },
-    "type": "filename",
+    "type": "FILENAME",
     "pattern": ".*\\A\\.?git-credentials\\z.*"
   },
   {
@@ -540,7 +540,7 @@
       "issueType": "Git configuration file",
       "issueDescription": null
     },
-    "type": "filename",
+    "type": "FILENAME",
     "pattern": ".*\\A\\.?gitconfig\\z.*"
   },
   {
@@ -548,7 +548,7 @@
       "issueType": "Chef Knife configuration file",
       "issueDescription": "Might contain references to Chef servers"
     },
-    "type": "filename",
+    "type": "FILENAME",
     "pattern": ".*knife.rb.*"
   },
   {
@@ -556,7 +556,7 @@
       "issueType": "Chef private key",
       "issueDescription": "Can be used to authenticate against Chef servers"
     },
-    "type": "path",
+    "type": "PATH",
     "pattern": ".*\\.?chef/(.*)\\.pem\\z.*"
   },
   {
@@ -564,7 +564,7 @@
       "issueType": "cPanel backup ProFTPd credentials file",
       "issueDescription": "Contains usernames and password hashes for FTP accounts"
     },
-    "type": "filename",
+    "type": "FILENAME",
     "pattern": ".*proftpdpasswd.*"
   },
   {
@@ -572,7 +572,7 @@
       "issueType": "Robomongo MongoDB manager configuration file",
       "issueDescription": "Might contain credentials for MongoDB databases"
     },
-    "type": "filename",
+    "type": "FILENAME",
     "pattern": ".*robomongo.json.*"
   },
   {
@@ -580,7 +580,7 @@
       "issueType": "FileZilla FTP configuration file",
       "issueDescription": "Might contain credentials for FTP servers"
     },
-    "type": "filename",
+    "type": "FILENAME",
     "pattern": ".*filezilla.xml.*"
   },
   {
@@ -588,7 +588,7 @@
       "issueType": "FileZilla FTP recent servers file",
       "issueDescription": "Might contain credentials for FTP servers"
     },
-    "type": "filename",
+    "type": "FILENAME",
     "pattern": ".*recentservers.xml.*"
   },
   {
@@ -596,7 +596,7 @@
       "issueType": "Ventrilo server configuration file",
       "issueDescription": "Might contain passwords"
     },
-    "type": "filename",
+    "type": "FILENAME",
     "pattern": ".*ventrilo_srv.ini.*"
   },
   {
@@ -604,7 +604,7 @@
       "issueType": "Docker configuration file",
       "issueDescription": "Might contain credentials for public or private Docker registries"
     },
-    "type": "filename",
+    "type": "FILENAME",
     "pattern": ".*\\A\\.?dockercfg\\z.*"
   },
   {
@@ -612,7 +612,7 @@
       "issueType": "NPM configuration file",
       "issueDescription": "Might contain credentials for NPM registries"
     },
-    "type": "filename",
+    "type": "FILENAME",
     "pattern": ".*\\A\\.?npmrc\\z.*"
   },
   {
@@ -620,7 +620,7 @@
       "issueType": "Terraform variable config file",
       "issueDescription": "Might contain credentials for terraform providers"
     },
-    "type": "filename",
+    "type": "FILENAME",
     "pattern": ".*terraform.tfvars.*"
   },
   {
@@ -628,7 +628,15 @@
       "issueType": "Environment configuration file",
       "issueDescription": null
     },
-    "type": "filename",
+    "type": "FILENAME",
     "pattern": ".*\\A\\.?env\\z.*"
+  },
+  {
+    "issue": {
+      "issueType": "Java resources file",
+      "issueDescription": "Potentially can contain secret data"
+    },
+    "type": "EXTENSION",
+    "pattern": ".*\\A\\.?resources\\z.*"
   }
 ]

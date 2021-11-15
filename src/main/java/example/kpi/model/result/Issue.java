@@ -1,13 +1,12 @@
 package example.kpi.model.result;
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
+import lombok.*;
 
+@AllArgsConstructor
+@NoArgsConstructor
 @Builder
 @Getter
-@RequiredArgsConstructor
 public class Issue {
-    private final String issueType;
-    private final String issueDescription;
+    private String issueType;
+    private String issueDescription;
 }

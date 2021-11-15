@@ -48,12 +48,12 @@ public class ConfigurationProvider {
                         "json",
                         "yaml"
                 ),
-                Paths.get(Objects.requireNonNull(getClass().getResource("pathCheckers.json")).toURI())
+                Paths.get(Objects.requireNonNull(ClassLoader.getSystemResource("pathCheckers.json")).toURI())
         );
         log.info("Got app configuration: ");
         log.info(() -> {
             try {
-                return new ObjectMapper().writeValueAsString(this.configuration);
+                return new ObjectMapper().writerWithDefaultPrettyPrinter().writeValueAsString(this.configuration);
             } catch (JsonProcessingException e) {
                 e.printStackTrace();
                 return "";
