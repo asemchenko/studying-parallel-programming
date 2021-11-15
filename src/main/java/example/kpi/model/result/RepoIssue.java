@@ -9,5 +9,5 @@ public class RepoIssue {
     private final Issue issue;
     private final String fileName;
     private final String filePath;
-    private final int lineNumber;
+    private final Integer lineNumber;
 }

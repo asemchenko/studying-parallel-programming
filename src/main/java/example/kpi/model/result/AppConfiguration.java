@@ -20,4 +20,8 @@ public class AppConfiguration {
      * Just to avoid analyzing some unnecessary files, like compiled binaries
      */
     private final List<String> fileExtensionsToBeAnalyzed;
+    /**
+     * Path to JSON file that contains path file checkers
+     */
+    private final Path pathCheckerDescriptor;
 }
