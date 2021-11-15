@@ -2,6 +2,7 @@ package example.kpi.pattern;
 
 import example.kpi.model.result.*;
 import example.kpi.pattern.checkers.IssueChecker;
+import example.kpi.pattern.checkers.primitive.RegexChecker;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.apache.commons.io.FileUtils;
@@ -21,9 +22,15 @@ import java.util.stream.Stream;
 @RequiredArgsConstructor
 public class RepoAnalyzer {
     private static final List<IssueChecker> checkers = List.of(
-
+            new RegexChecker(
+                    new Issue(
+                            "test_issue",
+                            "java main method signature"
+                    ),
+                    "public static void main"
+            )
     );
-
+    private final String repoName;
     private final RepoContent repoContent;
     private final AppConfiguration configuration;
 
@@ -33,16 +40,24 @@ public class RepoAnalyzer {
                 this.configuration.getFileExtensionsToBeAnalyzed().toArray(new String[0]),
                 true
         );
+
+        log.debug(() -> String.format(
+                "Start analyzing repo %s. Got files to be checked: %s",
+                repoName,
+                repoFilesToBeAnalyzed)
+        );
+
         final List<RepoIssue> allIssues = repoFilesToBeAnalyzed
                 .stream()
                 .map(this::processFile)
                 .flatMap(List::stream)
                 .collect(Collectors.toList());
 
-        return new RepoAnalysisResult(allIssues);
+        return new RepoAnalysisResult(this.repoName, allIssues);
     }
 
     private List<RepoIssue> processFile(File fileToBeAnalyzed) {
+        log.debug(() -> String.format("Start processing file %s", fileToBeAnalyzed));
         List<RepoIssue> foundedIssues = new ArrayList<>();
 
         try (BufferedReader br = new BufferedReader(new FileReader(fileToBeAnalyzed))) {
@@ -81,7 +96,6 @@ public class RepoAnalyzer {
                         lineNumber)
                 );
     }
-
 
     private RepoIssue withFullInfo(Issue issue, String fileName, String filePath, int lineNumber) {
         return new RepoIssue(issue, fileName, filePath, lineNumber);

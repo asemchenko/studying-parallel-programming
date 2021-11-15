@@ -26,7 +26,7 @@ public class RepoAnalysisCallable implements Callable<RepoAnalysisResult> {
         final var repoDownloader = new RepoDownloader(repoUrl, configuration);
         final RepoContent repoContent = repoDownloader.download();
 
-        final var repoAnalyzer = new RepoAnalyzer(repoContent, configuration);
+        final var repoAnalyzer = new RepoAnalyzer(this.repoUrl, repoContent, configuration);
         return repoAnalyzer.analyze();
     }
 }
