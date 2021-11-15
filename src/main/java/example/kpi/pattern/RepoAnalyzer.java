@@ -2,7 +2,7 @@ package example.kpi.pattern;
 
 import example.kpi.model.result.*;
 import example.kpi.pattern.checkers.IssueChecker;
-import example.kpi.pattern.checkers.primitive.RegexChecker;
+import example.kpi.pattern.checkers.generic.RegexChecker;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.apache.commons.io.FileUtils;
@@ -27,7 +27,7 @@ public class RepoAnalyzer {
                             "test_issue",
                             "java main method signature"
                     ),
-                    "public static void main"
+                    ".*public static void main.*"
             )
     );
     private final String repoName;

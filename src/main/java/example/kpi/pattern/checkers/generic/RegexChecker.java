@@ -1,4 +1,4 @@
-package example.kpi.pattern.checkers.primitive;
+package example.kpi.pattern.checkers.generic;
 
 import example.kpi.model.result.Issue;
 import example.kpi.pattern.checkers.IssueChecker;
