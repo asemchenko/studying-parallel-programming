@@ -15,18 +15,17 @@ import java.util.concurrent.Callable;
 @RequiredArgsConstructor(access = AccessLevel.PRIVATE)
 public class RepoAnalysisCallable implements Callable<RepoAnalysisResult> {
     private final String repoUrl;
-    private final AppConfiguration configuration;
 
     public static RepoAnalysisCallable create(String url, AppConfiguration configuration) {
-        return new RepoAnalysisCallable(url, configuration);
+        return new RepoAnalysisCallable(url);
     }
 
     @Override
     public RepoAnalysisResult call() throws Exception {
-        final var repoDownloader = new RepoDownloader(repoUrl, configuration);
+        final var repoDownloader = new RepoDownloader(repoUrl);
         final RepoContent repoContent = repoDownloader.download();
 
-        final var repoAnalyzer = new RepoAnalyzer(this.repoUrl, repoContent, configuration);
+        final var repoAnalyzer = new RepoAnalyzer(this.repoUrl, repoContent);
         return repoAnalyzer.analyze();
     }
 }

@@ -6,8 +6,11 @@ import example.kpi.model.result.AppConfiguration;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 
+import java.net.URISyntaxException;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
+import java.util.Objects;
 
 @RequiredArgsConstructor
 @Log4j2
@@ -20,7 +23,7 @@ public class ConfigurationProvider {
     /**
      * Must be called before getting configuration info
      */
-    public void parseConfiguration() {
+    public AppConfiguration parseConfiguration() throws URISyntaxException {
         this.configuration = new AppConfiguration(
                 List.of(
                         "https://github.com/asemchenko/Hotello-Spring.git"
@@ -44,7 +47,8 @@ public class ConfigurationProvider {
                         "xml",
                         "json",
                         "yaml"
-                )
+                ),
+                Paths.get(Objects.requireNonNull(getClass().getResource("pathCheckers.json")).toURI())
         );
         log.info("Got app configuration: ");
         log.info(() -> {
@@ -55,6 +59,7 @@ public class ConfigurationProvider {
                 return "";
             }
         });
+        return this.configuration;
     }
 
     public AppConfiguration getConfiguration() {

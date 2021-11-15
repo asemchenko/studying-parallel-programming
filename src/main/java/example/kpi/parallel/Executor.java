@@ -1,5 +1,6 @@
 package example.kpi.parallel;
 
+import example.kpi.di.Provider;
 import example.kpi.model.result.AppConfiguration;
 import example.kpi.model.result.RepoAnalysisResult;
 import example.kpi.model.result.Report;
@@ -13,7 +14,7 @@ import java.util.stream.Collectors;
 @Log4j2
 @RequiredArgsConstructor
 public class Executor {
-    private final AppConfiguration configuration;
+    private final AppConfiguration configuration = Provider.appConfiguration();
 
     private ExecutorService executorService;
 
@@ -42,7 +43,7 @@ public class Executor {
             try {
                 return task.get();
             } catch (InterruptedException | ExecutionException e) {
-                // TODO anse0220 put logging here
+                log.error(() -> String.format("Task finished with error: %s", e));
                 return null;
             }
         }).collect(Collectors.toList());

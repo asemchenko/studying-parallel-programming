@@ -1,5 +1,6 @@
 package example.kpi.pattern;
 
+import example.kpi.di.Provider;
 import example.kpi.model.result.*;
 import example.kpi.pattern.checkers.line.LineChecker;
 import example.kpi.pattern.checkers.line.generic.RegexLineChecker;
@@ -22,9 +23,9 @@ import java.util.stream.Stream;
 @Log4j2
 @RequiredArgsConstructor
 public class RepoAnalyzer {
+    private final AppConfiguration configuration = Provider.appConfiguration();
     private final String repoName;
     private final RepoContent repoContent;
-    private final AppConfiguration configuration;
 
     public RepoAnalysisResult analyze() {
         Collection<File> repoFilesToBeAnalyzed = FileUtils.listFiles(

@@ -1,5 +1,6 @@
 package example.kpi.repo;
 
+import example.kpi.di.Provider;
 import example.kpi.model.result.AppConfiguration;
 import example.kpi.model.result.RepoContent;
 import lombok.RequiredArgsConstructor;
@@ -15,8 +16,8 @@ import java.util.Random;
 @Log4j2
 @RequiredArgsConstructor
 public class RepoDownloader {
+    private final AppConfiguration configuration = Provider.appConfiguration();
     private final String repoUrl;
-    private final AppConfiguration configuration;
 
     public RepoContent download() throws GitAPIException, IOException {
         log.debug(
