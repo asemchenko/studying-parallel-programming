@@ -30,7 +30,7 @@ public class App {
         AppConfiguration configuration = Provider.appConfiguration();
 
         final String reportJson = new ObjectMapper().writerWithDefaultPrettyPrinter().writeValueAsString(report);
-        final var reportFile = configuration.getRepoContentStoringDir().resolve(Path.of("report.json")).toFile();
+        final var reportFile = configuration.getReportFileOutput().resolve(Path.of("report.json")).toFile();
         FileUtils.writeStringToFile(reportFile, reportJson, Charset.defaultCharset());
     }
 }

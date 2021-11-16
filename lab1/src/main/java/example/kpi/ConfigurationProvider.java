@@ -6,9 +6,14 @@ import example.kpi.model.result.AppConfiguration;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 
+import java.io.IOException;
+import java.net.URI;
 import java.net.URISyntaxException;
+import java.nio.file.FileSystem;
+import java.nio.file.FileSystems;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Objects;
 
@@ -23,7 +28,7 @@ public class ConfigurationProvider {
     /**
      * Must be called before getting configuration info
      */
-    public AppConfiguration parseConfiguration() throws URISyntaxException {
+    public AppConfiguration parseConfiguration() throws URISyntaxException, IOException {
         this.configuration = new AppConfiguration(
                 List.of(
                         "https://github.com/asemchenko/Hotello-Spring.git",
@@ -39,14 +44,15 @@ public class ConfigurationProvider {
                         "https://github.com/mihail-petrov/netit-webdev-java.git",
                         "https://github.com/infinity23/family-education-platform.git"
                 ),
-                4,
-                60 * 60 * 60,
-                Path.of("C:\\Users\\asem\\Downloads\\temp"),
+                Integer.parseInt(cliArgs[0]),
+                Integer.parseInt(cliArgs[1]),
+                Path.of(cliArgs[2]),
                 List.of(
                         "bin",
                         "zip"
                 ),
-                Paths.get(Objects.requireNonNull(ClassLoader.getSystemResource("pathCheckers.json")).toURI())
+                Paths.get(cliArgs[3]),
+                Path.of(cliArgs[4])
         );
         log.info("Got app configuration: ");
         log.info(() -> {

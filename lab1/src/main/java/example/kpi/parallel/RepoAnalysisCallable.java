@@ -22,10 +22,19 @@ public class RepoAnalysisCallable implements Callable<RepoAnalysisResult> {
 
     @Override
     public RepoAnalysisResult call() throws Exception {
+        log.info(() -> String.format("Start downloading repo %s", repoUrl));
+
         final var repoDownloader = new RepoDownloader(repoUrl);
         final RepoContent repoContent = repoDownloader.download();
 
+        log.info(() -> String.format("[DONE] Downloading repo %s finished", repoUrl));
+        log.info(() -> String.format("[DONE] Start analyzing repo %s", repoUrl));
+
         final var repoAnalyzer = new RepoAnalyzer(this.repoUrl, repoContent);
-        return repoAnalyzer.analyze();
+        RepoAnalysisResult result = repoAnalyzer.analyze();
+
+        log.info(() -> String.format("[DONE] Analyzing repo %s finished", repoUrl));
+
+        return result;
     }
 }

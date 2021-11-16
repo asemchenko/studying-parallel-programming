@@ -24,4 +24,5 @@ public class AppConfiguration {
      * Path to JSON file that contains path file checkers
      */
     private final Path pathCheckerDescriptor;
+    private final Path reportFileOutput;
 }

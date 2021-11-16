@@ -709,14 +709,5 @@
     },
     "type": "FILENAME",
     "pattern": ".*.?env.*"
-  },
-  {
-    "id": "16297a26-1a57-48dd-ab18-f2beca42990a",
-    "issue": {
-      "issueType": "Java resources file",
-      "issueDescription": "Potentially can contain secret data"
-    },
-    "type": "EXTENSION",
-    "pattern": ".*properties.*"
   }
 ]
