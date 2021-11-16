@@ -8,4 +8,4 @@
 
 ### How to run JAR file
 
-`java -jar <jar name>.jar <threads amount> <timeout seconds> <temp directory path> <pathCheckers.json path> <report output path>`
+`java -jar <jar name>.jar <temp directory path> <pathCheckers.json path> <threads amount> <timeout seconds> <report output path>`

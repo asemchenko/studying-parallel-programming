@@ -44,14 +44,14 @@ public class ConfigurationProvider {
                         "https://github.com/mihail-petrov/netit-webdev-java.git",
                         "https://github.com/infinity23/family-education-platform.git"
                 ),
-                Integer.parseInt(cliArgs[0]),
-                Integer.parseInt(cliArgs[1]),
-                Path.of(cliArgs[2]),
+                Integer.parseInt(cliArgs[2]),
+                Integer.parseInt(cliArgs[3]),
+                Path.of(cliArgs[0]),
                 List.of(
                         "bin",
                         "zip"
                 ),
-                Paths.get(cliArgs[3]),
+                Paths.get(cliArgs[1]),
                 Path.of(cliArgs[4])
         );
         log.info("Got app configuration: ");

@@ -4,6 +4,7 @@ import example.kpi.model.result.Issue;
 import example.kpi.model.result.RepoIssue;
 import example.kpi.pattern.checkers.line.LineChecker;
 import example.kpi.pattern.checkers.line.generic.RegexLineChecker;
+import example.kpi.pattern.checkers.line.specific.AwsAccessKeyChecker;
 import lombok.extern.log4j.Log4j2;
 
 import java.io.BufferedReader;
@@ -19,13 +20,7 @@ import java.util.stream.Stream;
 @Log4j2
 public class ContentAnalyzer {
     private static final List<LineChecker> checkers = List.of(
-            new RegexLineChecker(
-                    new Issue(
-                            "test_issue",
-                            "java main method signature"
-                    ),
-                    ".*public static void main.*"
-            )
+            new AwsAccessKeyChecker()
     );
 
     public List<RepoIssue> processFile(File fileToBeAnalyzed) {
