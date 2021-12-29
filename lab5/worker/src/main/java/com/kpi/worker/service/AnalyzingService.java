@@ -1,6 +1,7 @@
 package com.kpi.worker.service;
 
 import com.kpi.worker.ConfigurationProvider;
+import com.kpi.worker.di.Provider;
 import com.kpi.worker.dto.ReposDto;
 import com.kpi.worker.model.result.AppConfiguration;
 import com.kpi.worker.model.result.Report;
@@ -17,12 +18,12 @@ import java.net.URISyntaxException;
 @Log4j2
 public class AnalyzingService {
 
-    public Report analyze(ReposDto dto) {
+    public Report analyze(ReposDto dto){
         try {
-            AppConfiguration configuration = new ConfigurationProvider().parseConfiguration(dto.getRepos());
+            Provider.setAppConfiguration(new ConfigurationProvider().parseConfiguration(dto.getRepos()));
 
             final var executor = new Executor();
-            return executor.execute(configuration);
+            return executor.execute();
         } catch (InterruptedException | IOException | URISyntaxException e) {
             e.printStackTrace();
         }

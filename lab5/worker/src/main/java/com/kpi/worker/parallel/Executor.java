@@ -1,5 +1,6 @@
 package com.kpi.worker.parallel;
 
+import com.kpi.worker.di.Provider;
 import com.kpi.worker.model.result.AppConfiguration;
 import com.kpi.worker.model.result.RepoAnalysisResult;
 import com.kpi.worker.model.result.Report;
@@ -13,20 +14,21 @@ import java.util.stream.Collectors;
 @Log4j2
 @RequiredArgsConstructor
 public class Executor {
+    private final AppConfiguration configuration = Provider.appConfiguration();
 
     private ExecutorService executorService;
 
-    public Report execute(AppConfiguration configuration) throws InterruptedException {
-        final List<RepoAnalysisResult> repoAnalysisResults = processRepositories(configuration);
+    public Report execute() throws InterruptedException {
+        final List<RepoAnalysisResult> repoAnalysisResults = processRepositories();
         return new Report(repoAnalysisResults);
     }
 
-    private List<RepoAnalysisResult> processRepositories(AppConfiguration configuration) throws InterruptedException {
-        prepare(configuration);
+    private List<RepoAnalysisResult> processRepositories() throws InterruptedException {
+        prepare();
 
         final var repoTasks = executorService.invokeAll(
-                createTasksForProcessingRepositories(configuration),
-                configuration.getTimeoutSeconds(),
+                createTasksForProcessingRepositories(),
+                this.configuration.getTimeoutSeconds(),
                 TimeUnit.SECONDS
         );
 
@@ -47,13 +49,13 @@ public class Executor {
         }).collect(Collectors.toList());
     }
 
-    private void prepare(AppConfiguration configuration) {
+    private void prepare() {
         log.debug("Preparing executor service...");
 
-        if (configuration.getThreadsAmount() == 1) {
+        if (this.configuration.getThreadsAmount() == 1) {
             executorService = Executors.newSingleThreadExecutor();
         } else {
-            executorService = Executors.newFixedThreadPool(configuration.getThreadsAmount());
+            executorService = Executors.newFixedThreadPool(this.configuration.getThreadsAmount());
         }
     }
 
@@ -62,11 +64,11 @@ public class Executor {
         this.executorService.shutdown();
     }
 
-    private List<Callable<RepoAnalysisResult>> createTasksForProcessingRepositories(AppConfiguration configuration) {
-        return configuration
+    private List<Callable<RepoAnalysisResult>> createTasksForProcessingRepositories() {
+        return this.configuration
                 .getRepoURLs()
                 .stream()
-                .map(url -> RepoAnalysisCallable.create(url, configuration))
+                .map(url -> RepoAnalysisCallable.create(url, this.configuration))
                 .collect(Collectors.toList());
     }
 }

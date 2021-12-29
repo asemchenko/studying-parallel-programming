@@ -42,7 +42,7 @@ public class RepoAnalyzer {
         );
 
         final FileAnalyzer fileAnalyzer = new FileAnalyzer();
-p
+
         final Stream<RepoIssue> allIssues = repoFilesToBeAnalyzed
                 .stream()
                 .map(fileAnalyzer::processFile)

@@ -31,13 +31,13 @@ public class ConfigurationProvider {
                 repos,
                 4,
                 1000,
-                Path.of("C:/Users/user/Desktop/worker/target"),
+                Path.of("/tmp"),
                 List.of(
                         "bin",
                         "zip"
                 ),
-                Paths.get("C:/Users/user/Desktop/worker/src/main/resources/pathCheckers.json"),
-                Path.of("C:/Users/user/Desktop/worker/src/main/target")
+                Paths.get("/app/pathCheckers.json"),
+                Path.of("/tmp")
         );
         log.info("Got app configuration: ");
         log.info(() -> {

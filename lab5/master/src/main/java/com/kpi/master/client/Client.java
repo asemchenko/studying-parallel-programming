@@ -20,7 +20,7 @@ public class Client {
     public CompletableFuture<Report> sendTaskToWorker(RepoDto dto) throws InterruptedException
     {
         HttpEntity<RepoDto> request = new HttpEntity<>(dto);
-        Report result = restTemplate.postForObject("http://localhost:8080/worker/analyze",request, Report.class);
+        Report result = restTemplate.postForObject("http://nginx:4000/worker/analyze",request, Report.class);
         return CompletableFuture.completedFuture(result);
     }
 }
